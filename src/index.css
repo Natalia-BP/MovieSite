@@ -1,13 +1,57 @@
+/* General Styles */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(13, 37, 63)!important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Navbar */
+
+
+/* Movie Cards General Styles */
+button {
+  background-color: unset;
 }
+
+.tmdb-quickView {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.poster-card:hover .tmdb-quickView {
+  opacity: 1;
+}
+
+.btn.btn-favorite {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn.btn-favorite:hover {
+  background-color: rgb(216, 111, 129);
+}
+
+.poster-card .card-img-overlay {
+background-color: rgba(32, 32, 70, 0.295);
+}
+
+  /* Movie cards carousel */
+  .tmdb-arrows {
+    z-index: 1;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+  }
+
+  .tmdb-pop-carousel-container:hover .tmdb-arrows {
+    opacity: 1;
+  }
+  
+  .tmdb-arrows.prev {
+    background-image: linear-gradient(to right, rgba(13, 37, 63, 0.959) 30%, rgba(32, 35, 70, 0.76), rgba(32, 32, 70, 0));
+  }
+
+  .tmdb-arrows.next {
+    background-image: linear-gradient(to left, rgba(13, 37, 63, 0.959) 30%, rgba(32, 35, 70, 0.76), rgba(32, 32, 70, 0));
+  }
+
+  .slick-track {
+    padding-bottom: 10px;
+  }

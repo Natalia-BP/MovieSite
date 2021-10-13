@@ -6,12 +6,15 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Layout from './Layout';
+import MyContext from './store/Context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+<MyContext>
   <React.StrictMode>
     <Layout />
-  </React.StrictMode>,
+  </React.StrictMode>
+</MyContext>,
   document.getElementById('root')
 );
 
