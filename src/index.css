@@ -3,6 +3,10 @@ body {
   background-color: rgb(13, 37, 63)!important;
 }
 
+*:not(i) {
+  color: rgb(245, 246, 247);
+}
+
 /* Navbar */
 
 
@@ -45,13 +49,24 @@ background-color: rgba(32, 32, 70, 0.295);
   }
   
   .tmdb-arrows.prev {
-    background-image: linear-gradient(to right, rgba(13, 37, 63, 0.959) 30%, rgba(32, 35, 70, 0.76), rgba(32, 32, 70, 0));
+    background-image: linear-gradient(to right, rgba(13, 37, 63, 0.959) 30%, rgba(13, 37, 63, 0.705), rgba(32, 32, 70, 0));
   }
 
   .tmdb-arrows.next {
-    background-image: linear-gradient(to left, rgba(13, 37, 63, 0.959) 30%, rgba(32, 35, 70, 0.76), rgba(32, 32, 70, 0));
+    background-image: linear-gradient(to left, rgba(13, 37, 63, 0.959) 30%, rgba(13, 37, 63, 0.705), rgba(32, 32, 70, 0));
   }
 
   .slick-track {
     padding-bottom: 10px;
+  }
+
+  /* MEDIA QUERIES */
+  @media (min-width: 992px) {
+    /* Card  */
+    .card {
+      width: 17em;
+      height: 26em;
+      object-fit: cover;
+    }
+
   }

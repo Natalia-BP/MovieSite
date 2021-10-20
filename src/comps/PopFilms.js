@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from "../store/Context";
 import { BrowserRouter as Route, Link } from "react-router-dom";
-import TextTruncate from 'react-text-truncate';
 import Slider from 'react-slick';
 
 
@@ -21,7 +20,7 @@ function PopFilms() {
 
   return (
     <>
-      <h1 className="mb-3 mb-md-4">Popular Films</h1>
+      <h2 className="mb-3 mb-md-4">Popular Films</h2>
 
       <div className="tmdb-pop-carousel-container position-relative">
 
@@ -30,7 +29,7 @@ function PopFilms() {
 
               return (<div key={e.id} className="col">
 
-                <div className="card bg-dark poster-card mx-2 h-100 shadow position-relative d-flex flex-column align-items-center">
+                <div className="card bg-dark poster-card mx-2 shadow position-relative d-flex flex-column align-items-center">
                   <img src={`https://image.tmdb.org/t/p/original${e.poster_img}`} className="card-img h-100" alt="..." />
                   {/* Empty div, just for overlay styles */}
                   <div className="card-img-overlay"></div>

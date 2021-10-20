@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 // Styles
 import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import '@popperjs/core';
+import bootstrap from 'bootstrap';
 
 import Layout from './Layout';
 import MyContext from './store/Context';

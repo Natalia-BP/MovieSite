@@ -9,6 +9,7 @@ import Footer from './comps_fijos/Footer';
 
 // Switch Components
 import PopFilms from "./comps/PopFilms";
+import TopRated from "./comps/TopRated";
 
 function Layout() {
 
@@ -23,12 +24,18 @@ function Layout() {
                     {/* ###### Views ###### */}
                     {/* Home */}
                     <Route path="/">
-                        <PopFilms />
+                        <section className="mb-4 mb-lg-5">
+                            <PopFilms />
+                        </section>
+
+                        <section>
+                            <TopRated />
+                        </section>
                     </Route>
-                    
+
                     {/* Individual Movie Interface */}
                     <Route path="/movie/:id">
-                        
+
                     </Route>
 
 
