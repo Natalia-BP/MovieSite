@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from "../store/Context";
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import Slider from 'react-slick';
+import Modal from './Modal';
 
 
 function PopFilms() {
@@ -10,9 +11,49 @@ function PopFilms() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 572,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3
+        }
+      }
+    ]
   };
 
   const slider = React.useRef(null);
@@ -36,12 +77,12 @@ function PopFilms() {
 
                   {/* Quick View Button */}
                   <div className="tmdb-quickView bottom-0 position-absolute p-3">
-                    <a href="#" className="btn btn-warning">Quick View</a>
+                    <Link to={<Modal />} href="#" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</Link>
                   </div>
 
                   {/* Rates Button */}
                   <div className="tmdb-rating top-0 start-0 position-absolute pl-0 pt-3">
-                    <span href="#" className="badge rounded-0 rounded-end text-dark bg-warning"><i class="fas fa-star"></i> {e.rating}</span>
+                    <span href="#" className="badge rounded-0 rounded-end text-dark bg-warning"><i className="fas fa-star"></i> {e.rating}</span>
                   </div>
                 </div>
               </div>)
@@ -51,9 +92,9 @@ function PopFilms() {
     
 
         {/* Buttons */}
-        <button onClick={() => slider.current.slickPrev()} className="tmdb-arrows fs-3 prev position-absolute text-white h-100 d-flex top-0 flex-column justify-content-center ps-2 pe-4"><i class="fas fa-chevron-left"></i></button>
+        <button onClick={() => slider.current.slickPrev()} className="tmdb-arrows fs-3 prev position-absolute text-white h-100 d-flex top-0 flex-column justify-content-center ps-2 pe-4"><i className="fas fa-chevron-left"></i></button>
 
-        <button onClick={() => slider.current.slickNext()} className="tmdb-arrows fs-3 next position-absolute end-0 text-white h-100 top-0 d-flex flex-column justify-content-center ps-4 pe-2"><i class="fas fa-chevron-right"></i></button>
+        <button onClick={() => slider.current.slickNext()} className="tmdb-arrows fs-3 next position-absolute end-0 text-white h-100 top-0 d-flex flex-column justify-content-center ps-4 pe-2"><i className="fas fa-chevron-right"></i></button>
       </div>
     </>);
 

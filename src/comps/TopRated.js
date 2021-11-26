@@ -4,15 +4,55 @@ import { BrowserRouter as Route, Link } from "react-router-dom";
 import Slider from 'react-slick';
 
 function TopRated() {
-    var settings = {
-        className: "tmdb-pop-carousel",
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: false
-      };
+  var settings = {
+    className: "tmdb-carousel",
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 572,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3
+        }
+      }
+    ]
+  };
     
       const slider = React.useRef(null);
       const { store, actions } = useContext(Context);
@@ -35,7 +75,7 @@ function TopRated() {
     
                       {/* Quick View Button */}
                       <div className="tmdb-quickView bottom-0 position-absolute p-3">
-                        <a href="#" className="btn btn-warning">Quick View</a>
+                        <a href="#" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</a>
                       </div>
     
                       {/* Rates Button */}

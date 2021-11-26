@@ -8,6 +8,15 @@ body {
 }
 
 /* Navbar */
+.active-tab {
+  color: black;
+  background-color: white;
+  border-radius: 0.4rem;
+}
+
+.nav-link {
+  color: white;
+}
 
 
 /* Movie Cards General Styles */

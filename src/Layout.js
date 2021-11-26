@@ -7,9 +7,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Navbar from './comps_fijos/Navbar';
 import Footer from './comps_fijos/Footer';
 
-// Switch Components
-import PopFilms from "./comps/PopFilms";
-import TopRated from "./comps/TopRated";
+// Views
+import Home from "./views/Home";
+import { Modal } from "bootstrap";
+
+
 
 function Layout() {
 
@@ -24,13 +26,7 @@ function Layout() {
                     {/* ###### Views ###### */}
                     {/* Home */}
                     <Route path="/">
-                        <section className="mb-4 mb-lg-5">
-                            <PopFilms />
-                        </section>
-
-                        <section>
-                            <TopRated />
-                        </section>
+                        <Home />
                     </Route>
 
                     {/* Individual Movie Interface */}
@@ -38,7 +34,10 @@ function Layout() {
 
                     </Route>
 
-
+                    {/* Modal */}
+                    <Route path="/modal">
+                        <Modal />
+                    </Route>
 
                 </Switch>
             </div>

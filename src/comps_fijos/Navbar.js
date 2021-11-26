@@ -24,6 +24,7 @@ function Navbar() {
     return (
         <>
             <header className="main-header mb-3 mb-md-5 p-3 p-md-4 p-lg-5">
+
                 {!isDesktop ? "" : <img src={"https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"} />}
 
                 <nav className="navbar navbar-expand-md navbar-light">
@@ -36,22 +37,22 @@ function Navbar() {
                     </button>
 
                     <div className="collapse navbar-collapse mt-3" id="navbarSupportedContent">
-                        <ul className="navbar-nav mx-auto">
+                        <ul className="nav nav-pills nav-fill mx-auto">
 
                             <li className={"nav-item " + (location.pathname === "/" ? "active-tab" : "")}>
-                                <Link to="/" className="nav-link" >Home</Link>
+                                <Link to="/" className="nav-link text-reset px-4 px-4" >Home</Link>
                             </li>
 
                             <li className={"nav-item " + (location.pathname === "/movies" ? "active-tab" : "")}>
-                                <Link to="/movies" className="nav-link" >Movies</Link>
+                                <Link to="/movies" className="nav-link text-reset px-4" >Movies</Link>
                             </li>
 
                             <li className={"nav-item " + (location.pathname === "/tv-shows" ? "active-tab" : "")}>
-                                <Link to="/tv-shows" className="nav-link" >TV Shows</Link>
+                                <Link to="/tv-shows" className="nav-link text-reset px-4" >TV Shows</Link>
                             </li>
 
                             <li className={"nav-item " + (location.pathname === "/people" ? "active-tab" : "")}>
-                                <Link to="/people" className="nav-link" >People</Link>
+                                <Link to="/people" className="nav-link text-reset px-4" >People</Link>
                             </li>
 
                         </ul>
